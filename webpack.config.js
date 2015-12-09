@@ -1,13 +1,17 @@
+var path = require('path')
+var webpack = require('webpack')
+
 module.exports = {
   entry: "./src/main.js",
   output: {
-    path: "./build",
-    publicPath: "/build/",
-    filename: "build.js"
+    path: path.join(__dirname, 'dist'),
+    filename: "bundle.js",
+    publicPath: "/dist/",
   },
   module: {
     loaders: [
-      { test: /\.styl$/, loader: "style!css!stylus" },
+      { test: /\.js$/, loaders: [ 'babel?presets[]=es2015' ], exclude: /node_modules/, include:path.join(__dirname, 'src') },
+      { test: /\.scss$/, loader: "css!sass" },
       { test: /\.html$/, loader: "html" }
     ]
   }

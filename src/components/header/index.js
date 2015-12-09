@@ -1,4 +1,4 @@
-require('./style.styl')
+require('./style.scss')
 
 module.exports = {
   template: require('./template.html'),

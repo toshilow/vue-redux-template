@@ -1,17 +1,13 @@
-// With proper loader configuration you can load,
-// pre-process and insert css directly with require().
-// See webpack.config.js for details.  
-require('./main.styl')
+require('./main.scss')
 
-var Vue = require('vue')
-var app = new Vue({
+const Vue = require('vue')
+const app = new Vue({
   el: '#app',
   data: {
     title: "Vue and Redux",
     view: 'page-a'
   },
   components: {
-    // define the main pages as async components.
     'page-a': function (resolve) {
       console.log('Call A')
       require(['./views/a'], resolve)
@@ -31,7 +27,7 @@ var app = new Vue({
  * automatically handle all the lazy loading for us.
  */
 
-function route () {
+function route() {
   app.view = window.location.hash.slice(1) || 'page-a'
 }
 
