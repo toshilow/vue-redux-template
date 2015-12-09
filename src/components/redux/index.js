@@ -1,4 +1,4 @@
-require('./style.scss')
+import './style.scss';
 import Vue from 'vue';
 import template from './template.html';
 
