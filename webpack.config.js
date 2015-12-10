@@ -11,7 +11,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loaders: [ 'babel?presets[]=es2015' ], exclude: /node_modules/, include:path.join(__dirname, 'src') },
-      { test: /\.scss$/, loader: "css!sass" },
+      { test: /\.scss$/, loader: "style!css!sass" },
+      { test: /\.css$/, loader: "style!css" },
       { test: /\.html$/, loader: "html" }
     ]
   }

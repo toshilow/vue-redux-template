@@ -7,8 +7,10 @@
   <body>
     <div id="app">
       <div class="nav">
+        <a v-link="{ path: '/' }">Home</a>
+        <a v-link="{ path: '/list' }">List</a>
       </div>
-      <redux-comp :store="store"/>
+      <router-view></router-view>
     </div>
     <script src="dist/bundle.js"></script>
   </body>
