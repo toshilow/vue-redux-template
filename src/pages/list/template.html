@@ -1,0 +1,8 @@
+<div>
+    <h1>This is List</h1>
+    <ul v-for="item in listItem">
+        <li>
+            <a v-link="{ path: '/detail/' + $index}">{{item}}</a>
+        </li>
+    </ul>
+</div>
