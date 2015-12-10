@@ -1,4 +1,18 @@
 body {
-  background-color: #c1c191 !important;
-  padding:2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgba(153, 224, 220, 0.53) !important;
+}
+
+.nav {
+  font-size:20px;
+  padding:10px;
+  background-color: rgba(38, 38, 38, 0.8) !important;
+  a {
+    color: #f6ffed;
+    padding-right: 10px;
+  }
+}
+
+.contents {
+  padding-left:40px;
 }
