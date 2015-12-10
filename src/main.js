@@ -1,15 +1,21 @@
 import './main.scss'
-import { createStore } from 'redux';
-import reducers from './reducers';
-import Vue from 'vue';
-import reduxComp from "./components/redux"
 
-new Vue({
-  el: '#app',
-  data: {
-    store: createStore(reducers),
-  },
-  components: {
-    'redux-comp': reduxComp,
-  },
+import Vue from 'vue';
+import VueRouter from 'vue-router'
+import routing from "./config"
+
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  //history: true,
+  hashbang:true,
+  saveScrollPosition: true
 })
+
+router.beforeEach(function () {
+  window.scrollTo(0, 0)
+})
+
+const App = new Vue({})
+router.map(routing)
+router.start(App, '#app')
